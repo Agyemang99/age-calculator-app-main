@@ -1,0 +1,167 @@
+@font-face {
+    font-family: myFontStyleBold;
+    src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+@font-face {
+    font-family: myFontStyleBoldExtra;
+    src: url(./assets/fonts/Poppins-BoldItalic.ttf);
+}
+@font-face {
+    font-family:myFontStyle;
+    src: url(./assets/fonts/Poppins-ExtraBold.ttf);
+}
+@font-face {
+    font-family:myFontStyle ;
+    src: url(./assets/fonts/Poppins-Italic.ttf);
+}
+@font-face {
+    font-family:myFontStyleRegular ;
+    src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+
+:root{
+    --Purple: hsl(259, 100%, 65%);
+    --light-purple:hsl(228, 45%, 44%);
+    --Light-red: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --Off-white: hsl(0, 0%, 94%);
+    --Light-grey: hsl(0, 0%, 86%);
+    --Smokey-grey: hsl(0, 1%, 44%);
+    --Off-black: hsl(0, 0%, 8%);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: myFontStyle;
+}
+
+body{
+    background-color: var(--Off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+input{
+    border-radius: 3px;
+    border: 2px solid var(--Off-white);
+    width: 100%;
+    padding: 10px;
+    height: 5rem;
+    text-align: center;
+    font-family: myFontStyleBold;
+}
+input:focus{
+    border: 1px solid var(--light-purple);
+    outline: 0;
+}
+.calculator-container{
+    padding: 2rem;
+    background-color: var(--White);
+    border-radius: 10px;
+    border-bottom-right-radius:120px; 
+}
+
+.header{
+    display: flex;
+    gap: 10px;
+}
+
+.input-container label{
+    font-family: myFontStyleRegular;
+    color: var(--Smokey-grey);
+}
+.input-container :placeholder-shown{
+    font-family:myFontStyleBold;
+    font-size: 16px;
+}
+.display-container h1{
+    font-family:myFontStyleBoldExtra;
+}
+
+.header,.image-container,.display-container{
+    margin:1.8rem;
+}
+
+img{
+   width: 10%;
+   background-color: var(--Purple); 
+   border-radius: 50%;
+   padding: 12px;
+}
+
+button{
+    cursor: pointer;
+}
+
+img:active{
+    background-color: var(--Off-black);
+}
+
+
+#dash-years,#dash-months,#dash-days{
+    color: var(--Purple);
+    font-size:5rem;
+    font-family:myFontStyleBoldExtra;
+}
+
+small{
+    color: var(--Light-red);
+}
+
+@media screen and (min-width:375px) {
+    .calculator-container{
+        display: block;
+    }
+    .calculator-container .image-container{
+        margin-top: 3rem;
+    }
+    img{
+        position:absolute;
+        left: 45%;
+        top:28%;
+    }
+    
+    .display-container h1{
+        font-size:3em;
+        margin-top: -1rem;
+    }
+    
+}
+
+@media screen and (min-width:765px) {
+    .calculator-container{
+        display: grid;
+        grid-template-columns: 500px 150px;
+        height: 100vh;
+    }
+    .header{
+        grid-column: 1/1;
+    }
+    .image-container{
+        grid-column: 1/3;
+    }
+    
+    .display-container{
+        grid-column: 1/1;
+        margin-top: -1rem;
+    }
+
+    img{
+        position:fixed;
+        left: 70%;
+        width:6%;
+        top:31%;
+    }
+    .display-container h1{
+        font-size:5em;
+    }
+   
+}
+
+
+
